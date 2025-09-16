@@ -6,7 +6,7 @@ services:
     working_dir: /app
     volumes:
       - ./botrun-google-slides-mcp:/app
-      - ./keys/google_service_account_key.json:/app/keys/google_service_account_key.json:ro
+      - /home/debian/mcpslide/botrun-google-slides-mcp/keys:/app/keys:ro
       - ./env/.env:/app/.env:ro
     command: ["npm", "run", "start"]
     environment:

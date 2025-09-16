@@ -5,9 +5,7 @@ services:
     container_name: slides-mcp
     working_dir: /app
     volumes:
-      - ./botrun-google-slides-mcp:/app
       - /home/debian/mcpslide/botrun-google-slides-mcp/keys:/app/keys:ro
-      - ./env/.env:/app/.env:ro
     command: ["npm", "run", "start"]
     environment:
       - NODE_ENV=production

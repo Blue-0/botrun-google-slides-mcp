@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  slides-mcp:
+    image: node:18
+    container_name: slides-mcp
+    working_dir: /app
+    volumes:
+      - ./botrun-google-slides-mcp:/app
+      - ./keys/google_service_account_key.json:/app/keys/google_service_account_key.json:ro
+      - ./env/.env:/app/.env:ro
+    command: ["npm", "run", "start"]
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    ports:
+      - "9002:9002" # Si tu exposes HTTP, adapte ce port

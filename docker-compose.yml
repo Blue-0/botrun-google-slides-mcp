@@ -6,7 +6,7 @@ services:
     working_dir: /app
     volumes:
       - /home/debian/mcpslide/botrun-google-slides-mcp/keys:/app/keys:ro
-    command: ["node", "server-http.js"]
+    command: ["node", "server-http.cjs"]
     environment:
       - NODE_ENV=production
     restart: unless-stopped

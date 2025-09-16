@@ -20,4 +20,4 @@ RUN npm prune --production
 ENV NODE_ENV=production
 
 # Démarre le serveur HTTP (doit exister dans ton projet !)
-CMD ["node", "server-http.js"]
+CMD ["node", "server-http.cjs"]
